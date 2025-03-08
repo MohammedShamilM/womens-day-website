@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Women's Day 2025</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #9c27b0;
+            --secondary: #e91e63;
+            --accent: #ff4081;
+            --light: #f8f0fc;
+            --dark: #4a148c;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .header-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+        
+        .header-date {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+        
+        .cta-button {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--white);
+            color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+            padding: 0 1rem;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        /* Events Section */
+        .events-section {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 5rem 2rem;
+            position: relative;
+        }
+        
+        .events-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .events-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+        
+        .events-title::after {
+            background: var(--white);
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .event-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .event-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .event-time {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .event-description {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 1rem;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Quotes Section */
+        .quotes-section {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quotes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quote-slider {
+            margin-top: 3rem;
+            position: relative;
+        }
+        
+        .quote-slide {
+            padding: 0 2rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: none;
+        }
+        
+        .quote-slide.active {
+            opacity: 1;
+            position: relative;
+            display: block;
+        }
+        
+        .quote-text {
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quote-author {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .quote-position {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+        
+        .quote-nav {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .quote-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quote-dot.active {
+            background-color: var(--white);
+            transform: scale(1.3);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.2);
+            outline: none;
+        }
+        
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-text {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .social-icon i {
+            font-size: 1.2rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .quote-text {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .header-content {
+                padding: 2rem 1rem;
+            }
+            
+            .about-section,
+            .events-section,
+            .gallery-section,
+            .quotes-section,
+            .contact-section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="particles" id="particles"></div>
+        <div class="header-content">
+            <h1 class="header-title">International Women's Day</h1>
+            <h2 class="header-subtitle">Celebrating Women's Achievements Worldwide</h2>
+            <p class="header-date">March 8, 2025</p>
+            <button class="cta-button">Join The Celebration</button>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2 class="section-title">About Women's Day</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>International Women's Day celebrates the social, economic, cultural, and political achievements of women. The day also marks a call to action for accelerating gender equality.</p>
+                <p>Each year on March 8, we come together to celebrate women's achievements, raise awareness about discrimination, and take action to drive gender parity. The theme for 2025 focuses on empowering women in leadership and challenging gender stereotypes.</p>
+                <p>This global day recognizes the remarkable role that women play in their communities, families, and workplaces. Join us in honoring the incredible women who have shaped our world and continue to inspire future generations.</p>
+            </div>
+            <div class="about-image">
+                <img src="about section.jpg" alt="Women's Day Celebration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section" id="events">
+        <div class="events-container">
+            <h2 class="events-title section-title">Special Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <h3 class="event-title">Leadership Panel</h3>
+                    <p class="event-time">10:00 AM - 12:00 PM</p>
+                    <p class="event-description">Join our distinguished panel of women leaders from various fields as they share their insights, challenges, and triumphs in breaking the glass ceiling.</p>
+                </div>
+                <div class="event-card">
+                    <h3 class="event-title">Women in Tech Workshop</h3>
+                    <p class="event-time">1:00 PM - 3:00 PM</p>
+                    <p class="event-description">A hands-on workshop focusing on empowering women in technology fields, featuring coding demonstrations, career advice, and networking opportunities.</p>
+                </div>
+                <div class="event-card">
+                    <h3 class="event-title">Art & Culture Exhibition</h3>
+                    <p class="event-time">3:30 PM - 6:30 PM</p>
+                    <p class="event-description">Explore creative works by women artists, showcasing diverse perspectives and celebrating feminine creativity across various art forms.</p>
+                </div>
+                <div class="event-card">
+                    <h3 class="event-title">Gala Dinner & Awards</h3>
+                    <p class="event-time">7:00 PM - 10:00 PM</p>
+                    <p class="event-description">An elegant evening celebrating exceptional women in our community, featuring awards recognition, performances, and inspirational speakers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">Celebration Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="photo 1.jpg" alt="Women's Day Event 1">
+                <div class="gallery-caption">Leadership Conference 2024</div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo 2.jpg" alt="Women's Day Event 2">
+                <div class="gallery-caption">Community Outreach Program</div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo 3.jpg" alt="Women's Day Event 3">
+                <div class="gallery-caption">Women in Science Exhibition</div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo 4.jpg" alt="Women's Day Event 4">
+                <div class="gallery-caption">Empowerment Workshop</div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo 5.jpg" alt="Women's Day Event 5">
+                <div class="gallery-caption">Award Ceremony Highlights</div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo 6.jpg" alt="Women's Day Event 6">
+                <div class="gallery-caption">Global Celebration Moments</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="quotes-section" id="quotes">
+        <div class="quotes-container">
+            <h2 class="section-title">Inspiring Words</h2>
+            <div class="quote-slider">
+                <div class="quote-slide active">
+                    <p class="quote-text">"We need women at all levels, including the top, to change the dynamic, reshape the conversation, to make sure women's voices are heard and heeded, not overlooked and ignored."</p>
+                    <p class="quote-author">Sheryl Sandberg</p>
+                    <p class="quote-position">Business Executive</p>
+                </div>
+                <div class="quote-slide">
+                    <p class="quote-text">"I raise up my voice—not so that I can shout, but so that those without a voice can be heard. We cannot all succeed when half of us are held back."</p>
+                    <p class="quote-author">Malala Yousafzai</p>
+                    <p class="quote-position">Education Activist</p>
+                </div>
+                <div class="quote-slide">
+                    <p class="quote-text">"A woman with a voice is, by definition, a strong woman. But the search to find that voice can be remarkably difficult."</p>
+                    <p class="quote-author">Melinda Gates</p>
+                    <p class="quote-position">Philanthropist</p>
+                </div>
+            </div>
+            <div class="quote-nav">
+                <div class="quote-dot active" data-index="0"></div>
+                <div class="quote-dot" data-index="1"></div>
+                <div class="quote-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Get Involved</h2>
+        <div class="contact-form">
+            <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" class="form-input" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-input" placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-label">How Would You Like to Participate?</label>
+                <textarea id="message" class="form-input form-textarea" placeholder="Share your thoughts, ideas, or how you'd like to contribute..."></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="submit-button">Submit</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">International Women's Day 2025 | Celebrating Women Worldwide</p>
+            <div class="social-icons">
+                <div class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+            <p class="footer-text">&copy; 2025 Women's Day Celebration Committee. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Particle Animation for Header
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 10 + 5 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                particle.style.borderRadius = '50%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animation = `float ${Math.random() * 10 + 5}s linear infinite`;
+                
+                const keyframes = `
+                @keyframes float {
+                    0% {
+                        transform: translate(0, 0) rotate(0deg);
+                        opacity: 0;
+                    }
+                    25% {
+                        opacity: 0.5;
+                    }
+                    75% {
+                        opacity: 0.5;
+                    }
+                    100% {
+                        transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg);
+                        opacity: 0;
+                    }
+                }`;
+                
+                const style = document.createElement('style');
+                style.innerHTML = keyframes;
+                document.head.appendChild(style);
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Animate Sections when scrolled into view
+            const observerOptions = {
+                threshold: 0.2
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('about-content')) {
+                            const paragraphs = entry.target.querySelectorAll('.about-text p');
+                            const image = entry.target.querySelector('.about-image img');
+                            
+                            paragraphs.forEach((p, index) => {
+                                setTimeout(() => {
+                                    p.style.opacity = '1';
+                                    p.style.transform = 'translateY(0)';
+                                }, 200 * index);
+                            });
+                            
+                            setTimeout(() => {
+                                image.style.opacity = '1';
+                                image.style.transform = 'translateY(0)';
+                            }, 200 * paragraphs.length);
+                        } else if (entry.target.classList.contains('events-grid')) {
+                            const cards = entry.target.querySelectorAll('.event-card');
+                            
+                            cards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, 150 * index);
+                            });
+                        } else if (entry.target.classList.contains('gallery-grid')) {
+                            const items = entry.target.querySelectorAll('.gallery-item');
+                            
+                            items.forEach((item, index) => {
+                                setTimeout(() => {
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'scale(1)';
+                                }, 100 * index);
+                            });
+                        } else if (entry.target.classList.contains('contact-form')) {
+                            const groups = entry.target.querySelectorAll('.form-group');
+                            
+                            groups.forEach((group, index) => {
+                                setTimeout(() => {
+                                    group.style.opacity = '1';
+                                    group.style.transform = 'translateY(0)';
+                                }, 150 * index);
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            observer.observe(document.querySelector('.about-content'));
+            observer.observe(document.querySelector('.events-grid'));
+            observer.observe(document.querySelector('.gallery-grid'));
+            observer.observe(document.querySelector('.contact-form'));
+            
+            // Quote Slider Functionality
+            const quotes = document.querySelectorAll('.quote-slide');
+            const dots = document.querySelectorAll('.quote-dot');
+            let currentQuote = 0;
+            
+            function changeQuote(index) {
+                quotes.forEach(quote => quote.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                quotes[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentQuote = index;
+            }
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    changeQuote(parseInt(dot.getAttribute('data-index')));
+                });
+            });
+            
+            // Auto-rotate quotes
+            setInterval(() => {
+                currentQuote = (currentQuote + 1) % quotes.length;
+                changeQuote(currentQuote);
+            }, 5000);
+            
+            // Smooth Scrolling for Navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // CTA Button Animation
+            const ctaButton = document.querySelector('.cta-button');
+            ctaButton.addEventListener('click', function() {
+                document.getElementById('contact').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
